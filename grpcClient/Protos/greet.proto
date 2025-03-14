@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+option csharp_namespace = "grpcServer";
+
+package greet;
+
+// The greeting service definition.
+service Greeter {
+  // Sends a greeting
+  rpc SayHello (HelloRequest) returns (HelloReply);
+  
+  //this method can be called by the client. It needs a HelloRequest object and returns HelloReply object
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings.
+message HelloReply {
+  string message = 1;
+}
+
+//string message = 1; //datayı binary formata dönüştürme sırasını biz belirleyebiliyoruz
+
+
+//yeni bir method tanımlamak için:
+  //rpc MethodAdi(RequestEdilecekDataTuru) returns (ResponseEdilecekDataTuru)
